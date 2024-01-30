@@ -11,8 +11,19 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Home | Gym Routine App",
+  title: "Workout Routine Walkthroughs",
   description: "",
+  generator: "Next.js",
+  manifest: "/public/manifest.json",
+  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#fff" }],
+  authors: [{ name: "Martin Foakes" }],
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+  icons: [
+    { rel: "apple-touch-icon", url: "/public/icons/app-icon-x128.png" },
+    { rel: "icon", url: "/public/icons/app-icon-x128.png" },
+  ],
 };
 
 const RootLayout = ({
