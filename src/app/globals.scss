@@ -22,6 +22,16 @@ main {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -31,4 +41,8 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+div.sub-layout-child-container {
+  padding: 72px 16px;
 }
