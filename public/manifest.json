@@ -3,25 +3,26 @@
   "short_name": "Workouts",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+
   "icons": [
     {
-      "src": "./icons/app-icon-x128.png",
+      "src": "/icons/app-icon-x128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "./icons/app-icon-x256.png",
+      "src": "/icons/app-icon-x256.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "./icons/app-icon-x512.png",
+      "src": "/icons/app-icon-x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
