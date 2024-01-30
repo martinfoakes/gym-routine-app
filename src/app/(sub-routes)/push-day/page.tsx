@@ -33,7 +33,7 @@ const metadata: Array<{
     setAmount: "3",
     repAmount: "10",
     imgUrl:
-      "https://i.shgcdn.com/0c1706b0-37a5-48a4-b1b6-9c732b5d02d2/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+      "https://i.shgcdn.com/fb804e90-1738-4f87-a46c-d01040b3a76e/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
   },
   {
     primaryText: "Dips",
@@ -142,29 +142,25 @@ const PushDayPage = () => {
                   }}
                 />
               </ListItem>
-
-              {imgUrl ? (
-                <Modal open={viewImg} onClose={() => handleImgIconClick("")}>
-                  <Box sx={modalStyle}>
-                    <Image
-                      src={imgUrlState ?? ""}
-                      alt={primaryText}
-                      width={300}
-                      height={300}
-                      layout="responsive"
-                      objectFit="contain"
-                      quality={100}
-                      priority={true}
-                    />
-                  </Box>
-                </Modal>
-              ) : (
-                <></>
-              )}
             </Fragment>
           );
         })}
       </List>
+
+      <Modal open={viewImg} onClose={() => handleImgIconClick("")}>
+        <Box sx={modalStyle}>
+          <Image
+            src={imgUrlState ?? ""}
+            width={300}
+            alt=""
+            height={300}
+            layout="responsive"
+            objectFit="contain"
+            quality={100}
+            priority={true}
+          />
+        </Box>
+      </Modal>
     </Container>
   );
 };
