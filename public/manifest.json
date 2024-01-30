@@ -1,8 +1,8 @@
 {
   "name": "Workout Routine Walkthroughs",
   "short_name": "Workouts",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -11,7 +11,12 @@ const NavBar = ({ pageTitle }: { pageTitle?: string }) => {
       <AppBar
         position="fixed"
         component="nav"
-        style={{ backgroundColor: "#7b1fa2" }}
+        style={{
+          backgroundColor: "#121212",
+          backgroundImage:
+            "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+          color: "#ffffff",
+        }}
       >
         <Toolbar>
           <IconButton
