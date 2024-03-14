@@ -1,13 +1,13 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import { ThemeProvider, createTheme } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./globals.scss";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,22 +72,7 @@ const RootLayout = ({
       />
     </Head>
     <body className={inter.className}>
-      <AppRouterCacheProvider>
-        <GlobalStyles
-          styles={{
-            h1: {
-              fontSize: 38,
-            },
-            h2: {
-              fontSize: 30,
-            },
-            button: {
-              fontStyle: "italic",
-            },
-          }}
-        />
-        {children}
-      </AppRouterCacheProvider>
+      <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
     </body>
   </html>
 );

@@ -1,7 +1,7 @@
 div.bg-image-container {
   display: inline-flex;
   width: 100%;
-  height: 350px;
+  height: 200px;
   background-image: url("../assets/images/home-bg.jpg");
   background-blend-mode: color-burn;
   background-size: cover;
@@ -31,7 +31,7 @@ div.bg-image-container {
   background-size: auto;
   background-repeat: repeat no-repeat;
   background-position: 80vw bottom;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  97' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 71L50 67C100 63 200 54 300 36C400 19 500 -8 600 1C700 10 800 54 900 71C1000 89 1100 80 1150 76L1200 71V98H1150C1100 98 1000 98 900 98C800 98 700 98 600 98C500 98 400 98 300 98C200 98 100 98 50 98H0V71Z' fill='%23dcdcdc'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200  97' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 71L50 67C100 63 200 54 300 36C400 19 500 -8 600 1C700 10 800 54 900 71C1000 89 1100 80 1150 76L1200 71V98H1150C1100 98 1000 98 900 98C800 98 700 98 600 98C500 98 400 98 300 98C200 98 100 98 50 98H0V71Z' fill='%23d0d0d0'/></svg>");
   z-index: 1;
 }
 

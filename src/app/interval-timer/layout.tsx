@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Container } from "@mui/material";
-
 import NavBar from "@/components/Nav/NavBar";
 import { toTitleCase } from "@/helpers/formatters";
+import { Container, ThemeProvider } from "@mui/material";
+import { useEffect, useState } from "react";
 
-const RouteLayout = ({
+const PageLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -30,4 +29,4 @@ const RouteLayout = ({
   );
 };
 
-export default RouteLayout;
+export default PageLayout;

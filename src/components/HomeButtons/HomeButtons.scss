@@ -1,7 +1,19 @@
-button.button-comp {
-  padding: 8px 16px;
+div.button-group-home {
+  button.button-comp {
+    padding: 8px 16px;
+    border-radius: 24px;
 
-  svg {
-    margin-right: 8px;
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+
+    h6 {
+      min-width: 100px;
+      display: inline-flex;
+    }
+
+    svg:not(.MuiCircularProgress-svg) {
+      margin-right: 8px;
+    }
   }
 }
