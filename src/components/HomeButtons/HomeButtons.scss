@@ -12,7 +12,7 @@ div.button-group-home {
       display: inline-flex;
     }
 
-    svg {
+    svg:not(.MuiCircularProgress-svg) {
       margin-right: 8px;
     }
   }

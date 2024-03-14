@@ -6,14 +6,22 @@ import CompressIcon from "@mui/icons-material/Compress";
 
 import "./HomeButtons.scss";
 import { Timer } from "@mui/icons-material";
+import { useState } from "react";
+import { LoadingButton } from "@mui/lab";
 
 const HomeButtons = () => {
   const router = useRouter();
+  const [loadingKey, setLoadingKey] = useState<string | undefined>();
 
   const buttonsMeta = [
-    <Button
+    <LoadingButton
       key="push"
-      onClick={() => router.push("/push-day")}
+      loading={loadingKey === "push"}
+      loadingPosition="center"
+      onClick={() => {
+        setLoadingKey("push");
+        router.push("/push-day");
+      }}
       variant="contained"
       className="button-comp"
       startIcon={<ExpandIcon />}
@@ -21,10 +29,15 @@ const HomeButtons = () => {
       <Typography variant="h6" component="h6">
         {"Push Day"}
       </Typography>
-    </Button>,
-    <Button
+    </LoadingButton>,
+    <LoadingButton
       key="pull"
-      onClick={() => router.push("/pull-day")}
+      loading={loadingKey === "pull"}
+      loadingPosition="center"
+      onClick={() => {
+        setLoadingKey("pull");
+        router.push("/pull-day");
+      }}
       variant="contained"
       className="button-comp"
       color="secondary"
@@ -33,10 +46,15 @@ const HomeButtons = () => {
       <Typography variant="h6" component="h6">
         {"Pull Day"}
       </Typography>
-    </Button>,
-    <Button
+    </LoadingButton>,
+    <LoadingButton
       key="interval"
-      onClick={() => router.push("/interval-timer")}
+      loading={loadingKey === "interval"}
+      loadingPosition="center"
+      onClick={() => {
+        setLoadingKey("interval");
+        router.push("/interval-timer");
+      }}
       variant="contained"
       className="button-comp"
       color="warning"
@@ -45,7 +63,7 @@ const HomeButtons = () => {
       <Typography variant="h6" component="h6">
         {"Interval Timer"}
       </Typography>
-    </Button>,
+    </LoadingButton>,
   ];
 
   return (

@@ -1,7 +1,6 @@
 import { Home } from "@mui/icons-material";
 import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const NavBar = ({ pageTitle }: { pageTitle?: string }) => {
   const router = useRouter();

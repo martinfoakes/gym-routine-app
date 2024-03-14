@@ -3,7 +3,7 @@
 import NavBar from "@/components/Nav/NavBar";
 import { toTitleCase } from "@/helpers/formatters";
 import { Container, ThemeProvider } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const PageLayout = ({
   children,
