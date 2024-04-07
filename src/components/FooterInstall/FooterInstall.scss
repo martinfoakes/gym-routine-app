@@ -1,6 +1,10 @@
 button.install-btn {
-  display: inline-flex;
+  display: none;
   justify-content: flex-end;
+
+  &.show {
+    display: inline-flex;
+  }
 
   p.install-btn-text {
     white-space: nowrap;

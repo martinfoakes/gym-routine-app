@@ -1,32 +1,34 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { InstallMobileOutlined } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { Typography } from "@mui/material";
 import "./FooterInstall.scss";
-import { useEffect, useState } from "react";
 
 const FooterInstall = () => {
   const [beforeInstallPrompt, setInstallPrompt] = useState<any>(null);
+  const installButton = document.querySelector("#install-pwa");
 
   useEffect(() => {
-    const installButton = document.querySelector("#install-pwa");
-
     window.addEventListener("beforeinstallprompt", (event) => {
-      event.preventDefault();
       setInstallPrompt(event);
       installButton?.removeAttribute("hidden");
+      installButton?.classList.add("show");
     });
-  }, []);
+  }, [installButton]);
 
   const installButtonOnClick = async () => {
     if (!beforeInstallPrompt) {
       return;
     }
-    const result = await beforeInstallPrompt.prompt();
-    alert(`Install prompt was: ${result.outcome}`);
-
+    const { outcome } = await beforeInstallPrompt.prompt();
     setInstallPrompt(null);
+
+    if (outcome === "accepted") {
+      installButton?.classList.remove("show");
+      installButton?.setAttribute("hidden", "true");
+    }
   };
 
   return (
@@ -37,6 +39,7 @@ const FooterInstall = () => {
         type="button"
         variant="text"
         id="install-pwa"
+        hidden
         onClick={installButtonOnClick}
       >
         <Typography variant="body1" component="p" className="install-btn-text">
