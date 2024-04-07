@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button, Container, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import confetti from "canvas-confetti";
 
 import NavBar from "@/components/Nav/NavBar";
 import { toTitleCase } from "@/helpers/formatters";
 import { useRouter } from "next/navigation";
+import { LoadingButton } from "@mui/lab";
 
 const RouteLayout = ({
   children,
@@ -37,7 +38,7 @@ const RouteLayout = ({
             display: "inline-flex",
           }}
         >
-          <Button
+          <LoadingButton
             sx={{
               padding: "8px 24px",
               borderRadius: "24px",
@@ -45,6 +46,7 @@ const RouteLayout = ({
             variant="contained"
             color="success"
             size="large"
+            loading={completeBtnClick}
             disabled={completeBtnClick}
             disableFocusRipple
             onClick={() => {
@@ -69,7 +71,7 @@ const RouteLayout = ({
             <Typography variant="h6" component="h6">
               {"Workout Complete!"}
             </Typography>
-          </Button>
+          </LoadingButton>
         </Container>
       </div>
     </>

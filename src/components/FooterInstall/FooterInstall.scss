@@ -1,0 +1,25 @@
+button.install-btn {
+  display: inline-flex;
+  justify-content: flex-end;
+
+  p.install-btn-text {
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 0%;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: transparent;
+
+    p.install-btn-text {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 431px) {
+    display: none;
+  }
+}
