@@ -7,16 +7,25 @@ import { Typography } from "@mui/material";
 import "./FooterInstall.scss";
 
 const FooterInstall = () => {
+  const [installBtn, setInstallBtn] = useState<HTMLElement | null>(null);
   const [beforeInstallPrompt, setInstallPrompt] = useState<any>(null);
-  const installButton = document.querySelector("#install-pwa");
 
   useEffect(() => {
+    const installButton = document.getElementById("install-pwa");
+    setInstallBtn(installButton);
+
+    if (process.env.NODE_ENV === "development") {
+      installButton?.removeAttribute("hidden");
+      installButton?.classList.add("show");
+    }
+
     window.addEventListener("beforeinstallprompt", (event) => {
       setInstallPrompt(event);
+
       installButton?.removeAttribute("hidden");
       installButton?.classList.add("show");
     });
-  }, [installButton]);
+  }, []);
 
   const installButtonOnClick = async () => {
     if (!beforeInstallPrompt) {
@@ -26,8 +35,8 @@ const FooterInstall = () => {
     setInstallPrompt(null);
 
     if (outcome === "accepted") {
-      installButton?.classList.remove("show");
-      installButton?.setAttribute("hidden", "true");
+      installBtn?.classList.remove("show");
+      installBtn?.setAttribute("hidden", "true");
     }
   };
 
